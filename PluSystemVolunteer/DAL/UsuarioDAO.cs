@@ -1,0 +1,37 @@
+﻿using PluSystemVolunteer.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace PluSystemVolunteer.DAL
+{
+    public class UsuarioDAO
+    {
+        private static Context ctx = SingletonContext.GetInstance();
+        public static void CadastrarUsuario(Usuario user)
+        {
+            ctx.Usuarios.Add(user);
+            ctx.SaveChanges();
+        }
+        public static List<Usuario> RetornarUsuarios()
+        {
+            return ctx.Usuarios.ToList();
+        }
+        public static Usuario BuscarUsuarioPorId(int? id)
+        {
+            return ctx.Usuarios.Find(id);
+        }
+        public static void RemoverUsuario(Usuario u)
+        {
+            ctx.Usuarios.Remove(u);
+            ctx.SaveChanges();
+        }
+
+        public static void AlterarUsuario(Usuario u)
+        {
+            ctx.Entry(u).State = System.Data.Entity.EntityState.Modified;
+            ctx.SaveChanges();
+        }
+    }
+}
