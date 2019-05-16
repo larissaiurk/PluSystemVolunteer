@@ -14,26 +14,30 @@
         <th>Nome</th>
         <th>Apelido</th>
         <th>Telefone</th>
+        <th>Login</th>
+        <th>Senha</th>
         <th></th>
         <th></th>
     </tr>
     @foreach (PluSystemVolunteer.Models.Usuario usuario in usuarios)
     {
-        <tr>
-            <td>@usuario.Nome</td>
-            <td>@usuario.Apelido</td>
-            <td>@usuario.Telefone</td>
-            <td>
-                @Html.ActionLink("Remover", "Remover", "Usuario",
-                    new { id = usuario.UsuarioId },
-                    new { @class = "btn btn-danger" })
-            </td>
-            <td>
-                @Html.ActionLink("Alterar", "Alterar", "Usuario",
-                    new { id = usuario.UsuarioId },
-                    new { @class = "btn btn-warning" })
-            </td>
-        </tr>
+    <tr>
+        <td>@usuario.Nome</td>
+        <td>@usuario.Apelido</td>
+        <td>@usuario.Telefone</td>
+        <td>@usuario.Login</td>
+        <td>@usuario.Senha</td>
+        <td>
+            @Html.ActionLink("Remover", "Remover", "Usuario",
+                new { id = usuario.UsuarioId },
+                new { @class = "btn btn-danger" })
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", "Usuario",
+                new { id = usuario.UsuarioId },
+                new { @class = "btn btn-warning" })
+        </td>
+    </tr>
     }
    
 </table>
