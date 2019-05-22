@@ -39,11 +39,23 @@ namespace PluSystemVolunteer.Controllers
             return View();
         }
 
+        public ActionResult Listar()
+        {
+            ViewBag.DataAtual = DateTime.Now;
+            ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
+            return View();
+        }
+
         public ActionResult Cadastrar()
         {
             return View();
         }
-       
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         SHA256 shaM = new SHA256Managed();
 
         [HttpPost]

@@ -1,45 +1,11 @@
-﻿@* Bloco de código em # *@
-@{
-    DateTime data = ViewBag.DataAtual;
-    List<PluSystemVolunteer.Models.Usuario> usuarios = ViewBag.Usuarios;
-}
+﻿
 
-<h1>Gerenciamento de Produtos</h1>
+                <div class="row">
+                    <div class="col-md-12 text-center" style="position: absolute;top:50%; left: 50%;transform: translateX(-50%);">
+                        <div class="text-center">
+                            <a href="Usuario/Cadastrar" class="btn btn-danger btn-lg" style="margin-right:10px" >Cadastrar-se</a>
+                            <a href="Usuario/Login"     class="btn btn-danger btn-lg">Iniciar Sessão</a>
+                        </div>
+                    </div>
+                </div>
 
-@Html.ActionLink("Cadastrar usuário", "Cadastrar", "Usuario")
-<br />
-
-<table class="table table-hover table-primary ">
-    <tr>
-        <th>Nome</th>
-        <th>Apelido</th>
-        <th>Telefone</th>
-        <th>Login</th>
-        <th>Senha</th>
-        <th></th>
-        <th></th>
-    </tr>
-    @foreach (PluSystemVolunteer.Models.Usuario usuario in usuarios)
-    {
-    <tr>
-        <td>@usuario.Nome</td>
-        <td>@usuario.Apelido</td>
-        <td>@usuario.Telefone</td>
-        <td>@usuario.Login</td>
-        <td>@usuario.Senha</td>
-        <td>
-            @Html.ActionLink("Remover", "Remover", "Usuario",
-                new { id = usuario.UsuarioId },
-                new { @class = "btn btn-danger" })
-        </td>
-        <td>
-            @Html.ActionLink("Alterar", "Alterar", "Usuario",
-                new { id = usuario.UsuarioId },
-                new { @class = "btn btn-warning" })
-        </td>
-    </tr>
-    }
-   
-</table>
-
-<b>Dados atualizados em: </b>@data
