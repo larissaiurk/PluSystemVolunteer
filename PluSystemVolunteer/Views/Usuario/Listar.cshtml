@@ -3,9 +3,12 @@
     DateTime data = ViewBag.DataAtual;
     List<PluSystemVolunteer.Models.Usuario> usuarios = ViewBag.Usuarios;
 }
-<h1>Listagem de Produtos</h1>
-@Html.ActionLink("Cadastrar usuário", "Listar", "Usuario")
+
+<h1>Gerenciamento de Produtos</h1>
+
+@Html.ActionLink("Cadastrar usuário", "Cadastrar", "Usuario")
 <br />
+
 <table class="table table-hover table-primary ">
     <tr>
         <th>Nome</th>
@@ -38,4 +41,5 @@
     }
 
 </table>
+
 <b>Dados atualizados em: </b>@data

@@ -14,6 +14,26 @@ namespace PluSystemVolunteer.DAL
             ctx.Usuarios.Add(user);
             ctx.SaveChanges();
         }
+        public static Usuario Login(string login, string password)
+        {
+            try {
+                Usuario user = ctx.Usuarios.Find(login);
+                if (user != null)
+                {
+                    if(user.Senha == password)
+                    {
+                        return user;
+                    }
+                    else { return null;  }                    
+                }
+                else
+                {
+                    return null;
+                }
+                    
+                        }
+            catch { return null; }
+        }
         public static List<Usuario> RetornarUsuarios()
         {
             return ctx.Usuarios.ToList();
