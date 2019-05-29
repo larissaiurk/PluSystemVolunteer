@@ -13,6 +13,9 @@ namespace PluSystemVolunteer.Controllers
     public class UsuarioController : Controller
     {
 
+        SHA256 shaM = new SHA256Managed();
+
+
         //encryptador de strings
         static string ComputeSha256Hash(string rawData)
         {
@@ -38,13 +41,46 @@ namespace PluSystemVolunteer.Controllers
             ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+
+        public ActionResult Login(string txtEmail, string txtSenha)
+        {
+
+            txtSenha = ComputeSha256Hash(txtSenha);
+
+
+            if (UsuarioDAO.Login(txtEmail, txtSenha) != null) {
+                
+                TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+
+                return RedirectToAction("Listar", "Usuario");
+
+            }
+            else {
+
+                TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+
+                return RedirectToAction("Login", "Usuario");
+            }
+        }
+
+        public ActionResult Listar()
+        {
+            ViewBag.DataAtual = DateTime.Now;
+            ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
+            return View();
+        }
+
 
         public ActionResult Cadastrar()
         {
             return View();
         }
        
-        SHA256 shaM = new SHA256Managed();
 
         [HttpPost]
 
