@@ -17,12 +17,16 @@ namespace PluSystemVolunteer.Models
 
         [Key]
         public int UsuarioId { get; set; }
+        public String Login { get; set; }
+        public String Senha { get; set; }
         public String Nome { get; set; }
         public String Apelido { get; set; }
         public DateTime DataNascimento { get; set; }
-        public String Login { get; set; }
-        public String Senha { get; set; }
         public int Telefone { get; set; }
+        public Boolean Administrador { get; set; }
+        public string Imagem { get; set; }
+        public Decimal Pontuacao { get; set; }
+        public Grupo Grupo { get; set; }
         public DateTime CriadoEm { get; set; }
 
     }
