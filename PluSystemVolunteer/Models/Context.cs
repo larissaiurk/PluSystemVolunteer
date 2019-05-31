@@ -9,7 +9,9 @@ namespace PluSystemVolunteer.Models
     public class Context : DbContext
     {
         public Context() : base("DbPluSystemVolunteer") { }
-        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Grupo> Grupos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<CategoriaEvento> CategoriasEvento { get; set; }
+        public DbSet<Evento> Eventos { get; set; }
     }
 }

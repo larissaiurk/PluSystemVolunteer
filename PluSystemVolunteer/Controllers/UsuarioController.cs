@@ -84,7 +84,7 @@ namespace PluSystemVolunteer.Controllers
 
         [HttpPost]
 
-        public ActionResult Cadastrar(string txtNome, int txtTelefone, string txtEmail, string txtSenha)
+        public ActionResult Cadastrar(string txtNome, string txtTelefone, string txtEmail, string txtSenha)
         {
             Usuario u = new Usuario
             {
@@ -115,7 +115,7 @@ namespace PluSystemVolunteer.Controllers
         }
 
         [HttpPost]
-        public ActionResult Alterar(string txtNome, string txtApelido, int txtTelefone, int hdnId, int txtId)
+        public ActionResult Alterar(string txtNome, string txtApelido, string txtTelefone, int hdnId, int txtId)
         {
             Usuario u = UsuarioDAO.BuscarUsuarioPorId(txtId);
             u.Nome = txtNome;
