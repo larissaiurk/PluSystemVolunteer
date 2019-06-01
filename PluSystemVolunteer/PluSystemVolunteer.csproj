@@ -127,11 +127,16 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\Shared\_Login_layout.cshtml" />
     <Content Include="Views\Usuario\Listar.cshtml" />
+    <Content Include="Views\Grupo\Index.cshtml" />
+    <Content Include="Views\Grupo\Create.cshtml" />
     <None Include="Views\Usuario\Login.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaEventoController.cs" />
+    <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\GrupoDAO.cs" />
@@ -140,17 +145,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905142308331_TesteInicial.cs" />
-    <Compile Include="Migrations\201905142308331_TesteInicial.Designer.cs">
-      <DependentUpon>201905142308331_TesteInicial.cs</DependentUpon>
+    <Compile Include="Migrations\201905312333202_novas.cs" />
+    <Compile Include="Migrations\201905312333202_novas.Designer.cs">
+      <DependentUpon>201905312333202_novas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905192323368_teeste.cs" />
-    <Compile Include="Migrations\201905192323368_teeste.Designer.cs">
-      <DependentUpon>201905192323368_teeste.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905241824553_teste.cs" />
-    <Compile Include="Migrations\201905241824553_teste.Designer.cs">
-      <DependentUpon>201905241824553_teste.cs</DependentUpon>
+    <Compile Include="Migrations\201905312334548_novasgrupo.cs" />
+    <Compile Include="Migrations\201905312334548_novasgrupo.Designer.cs">
+      <DependentUpon>201905312334548_novasgrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaEvento.cs" />
@@ -182,16 +183,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CategoriaEvento\" />
+    <Folder Include="Views\Categoria\" />
+    <Folder Include="Views\Evento\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905142308331_TesteInicial.resx">
-      <DependentUpon>201905142308331_TesteInicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905312333202_novas.resx">
+      <DependentUpon>201905312333202_novas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905192323368_teeste.resx">
-      <DependentUpon>201905192323368_teeste.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905241824553_teste.resx">
-      <DependentUpon>201905241824553_teste.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905312334548_novasgrupo.resx">
+      <DependentUpon>201905312334548_novasgrupo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

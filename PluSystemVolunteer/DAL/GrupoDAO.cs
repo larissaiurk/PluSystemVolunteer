@@ -9,10 +9,11 @@ namespace PluSystemVolunteer.DAL
     public class GrupoDAO
     {
         private static Context ctx = SingletonContext.GetInstance();
-        public static void CadastrarGrupo (Grupo grup)
+        public static bool CadastrarGrupo (Grupo grup)
         {
             ctx.Grupos.Add(grup);
             ctx.SaveChanges();
+            return true;
         }
         public static List<Grupo> RetornarGrupos()
         {
