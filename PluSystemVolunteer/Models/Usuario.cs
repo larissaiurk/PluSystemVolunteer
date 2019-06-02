@@ -23,10 +23,10 @@ namespace PluSystemVolunteer.Models
         public String Apelido { get; set; }
         public DateTime DataNascimento { get; set; }
         public String Telefone { get; set; }
-        public Boolean Administrador { get; set; }
-        public String Imagem { get; set; }
-        public Decimal Pontuacao { get; set; }
-        public Grupo Grupo { get; set; }
+        //public Boolean Administrador { get; set; }
+        //public String Imagem { get; set; }
+        //public Decimal Pontuacao { get; set; }
+        //public Grupo Grupo { get; set; }
         public DateTime CriadoEm { get; set; }
 
     }

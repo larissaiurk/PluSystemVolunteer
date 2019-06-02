@@ -49,22 +49,28 @@ namespace PluSystemVolunteer.Controllers
 
         public ActionResult Login(string txtEmail, string txtSenha)
         {
+            Usuario u = new Usuario
+            {
 
-            txtSenha = ComputeSha256Hash(txtSenha);
+                Login = txtEmail,
+                Senha = ComputeSha256Hash(txtSenha)
+            };
 
+             if (UsuarioDAO.Login(u) != null)
+            {
 
-            if (UsuarioDAO.Login(txtEmail, txtSenha) != null) {
-                
                 TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
 
-                return RedirectToAction("Listar", "Usuario");
+                return RedirectToAction("Index", "Home");
 
             }
-            else {
+            else
+            {
 
                 TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+                return RedirectToAction("Index", "Home");
 
-                return RedirectToAction("Login", "Usuario");
+                //return RedirectToAction("Login", "Usuario");
             }
         }
 

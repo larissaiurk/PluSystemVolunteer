@@ -140,17 +140,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905142308331_TesteInicial.cs" />
-    <Compile Include="Migrations\201905142308331_TesteInicial.Designer.cs">
-      <DependentUpon>201905142308331_TesteInicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905192323368_teeste.cs" />
-    <Compile Include="Migrations\201905192323368_teeste.Designer.cs">
-      <DependentUpon>201905192323368_teeste.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905241824553_teste.cs" />
-    <Compile Include="Migrations\201905241824553_teste.Designer.cs">
-      <DependentUpon>201905241824553_teste.cs</DependentUpon>
+    <Compile Include="Migrations\201905312340426_1.cs" />
+    <Compile Include="Migrations\201905312340426_1.Designer.cs">
+      <DependentUpon>201905312340426_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaEvento.cs" />
@@ -184,14 +176,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905142308331_TesteInicial.resx">
-      <DependentUpon>201905142308331_TesteInicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905192323368_teeste.resx">
-      <DependentUpon>201905192323368_teeste.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905241824553_teste.resx">
-      <DependentUpon>201905241824553_teste.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905312340426_1.resx">
+      <DependentUpon>201905312340426_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
