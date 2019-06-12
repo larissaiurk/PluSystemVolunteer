@@ -130,6 +130,12 @@
     <Content Include="Views\Grupo\Create.cshtml" />
     <Content Include="Views\Grupo\Index.cshtml" />
     <Content Include="Views\Grupo\Cadastrar.cshtml" />
+    <Content Include="Views\CategoriaEvento\Create.cshtml" />
+    <Content Include="Views\CategoriaEvento\Delete.cshtml" />
+    <Content Include="Views\CategoriaEvento\Edit.cshtml" />
+    <Content Include="Views\CategoriaEvento\Index.cshtml" />
+    <Content Include="Views\Evento\Index.cshtml" />
+    <Content Include="Views\Evento\Create.cshtml" />
     <None Include="Views\Usuario\Login.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
