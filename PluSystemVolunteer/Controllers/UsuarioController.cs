@@ -101,7 +101,8 @@ namespace PluSystemVolunteer.Controllers
                 DataNascimento = DateTime.Now,
                 CriadoEm = DateTime.Now,
                 Login = txtEmail,
-                Senha = ComputeSha256Hash(txtSenha)
+                Senha = ComputeSha256Hash(txtSenha),
+                Administrador = false
             };
 
             UsuarioDAO.CadastrarUsuario(u);
