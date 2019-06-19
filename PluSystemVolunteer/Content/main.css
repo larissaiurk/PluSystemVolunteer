@@ -28,8 +28,8 @@ div.well {
     background-size: cover;
     opacity: 1;
     filter: alpha(opacity=0);
-    padding-left: 25%;
-    padding-top: 10%;
+    padding-left: 10%;
+    padding-top: 5%;
 }
 
 .body_login

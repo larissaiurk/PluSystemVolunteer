@@ -21,11 +21,15 @@ namespace PluSystemVolunteer.DAL
                 Usuario user = ctx.Usuarios.Find(login);
                 if (user != null)
                 {
-                    if (user.Senha == login.Senha)
+                    
+                    if (user.Senha.Equals(login.Senha))
                     {
                         return user;
                     }
-                    else { return null; }
+                    else
+                    {
+                        return null;
+                    }
                 }
                 else
                 {
@@ -33,7 +37,9 @@ namespace PluSystemVolunteer.DAL
                 }
 
             }
-            catch { return null; }
+            catch {
+                return null;
+            }
         }
         public static List<Usuario> RetornarUsuarios()
         {
