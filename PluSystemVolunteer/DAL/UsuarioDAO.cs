@@ -34,7 +34,10 @@ namespace PluSystemVolunteer.DAL
                 if (user != null)
                 {
                     
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                     if (user.Senha.Equals(login.Senha))
                     {
                         return user;

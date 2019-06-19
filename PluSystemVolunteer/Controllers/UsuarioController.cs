@@ -56,6 +56,7 @@ namespace PluSystemVolunteer.Controllers
                 Login = txtEmail,
                 Senha = ComputeSha256Hash(txtSenha)
             };
+<<<<<<< HEAD
 
             u = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
             if (u != null)
@@ -63,13 +64,26 @@ namespace PluSystemVolunteer.Controllers
                 //Autenticação - FormsAuthentication
                 FormsAuthentication.SetAuthCookie(u.Login, true);
                 //Sessao.Login(usuario.Email);
+=======
+            
+            Usuario user = UsuarioDAO.Login(u);
+            if (user != null)
+            {
+
+               //FormsAuthentication.SetAuthCookie(usuario.Email, true);
+>>>>>>> master
                 return RedirectToAction("Index", "Home");
             }
             else
             {
                 TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+<<<<<<< HEAD
                 //return RedirectToAction("Index", "Home");
                 return RedirectToAction("Login", "Usuario");
+=======
+                return RedirectToAction("Index", "Home");
+                //return RedirectToAction("Login", "Usuario");
+>>>>>>> master
             }
         }
 
