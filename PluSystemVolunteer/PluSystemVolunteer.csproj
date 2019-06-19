@@ -190,8 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\NewFolder1\" />
-    <Folder Include="Content\NewFolder2\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905312340426_1.resx">
