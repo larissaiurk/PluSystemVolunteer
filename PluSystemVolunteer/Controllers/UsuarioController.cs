@@ -51,25 +51,22 @@ namespace PluSystemVolunteer.Controllers
         {
             Usuario u = new Usuario
             {
-
                 Login = txtEmail,
                 Senha = ComputeSha256Hash(txtSenha)
             };
-
-             if (UsuarioDAO.Login(u) != null)
+            
+            Usuario user = UsuarioDAO.Login(u);
+            if (user != null)
             {
 
-                TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
-
+               //FormsAuthentication.SetAuthCookie(usuario.Email, true);
                 return RedirectToAction("Index", "Home");
 
             }
             else
             {
-
                 TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
                 return RedirectToAction("Index", "Home");
-
                 //return RedirectToAction("Login", "Usuario");
             }
         }
