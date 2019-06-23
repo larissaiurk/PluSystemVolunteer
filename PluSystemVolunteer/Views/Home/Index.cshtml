@@ -1,6 +1,47 @@
 ﻿
 @{
-
+    List<PluSystemVolunteer.Models.Usuario> usuarios = ViewBag.Usuarios;
 }
+<div class="sidenav">
+    <h3 class="text-center" style="color:#9C9C9C">RANKING Voluntários</h3>
+    <hr>
 
+    @{int i = 0; }
+    @foreach (PluSystemVolunteer.Models.Usuario usuario in usuarios)
+    {
+        i++;
+        if (i == 1)
+        {
+            <h4 class="text-center">
+                <img src="~/Content/img/icon-champtier-1.png">@usuario.Nome
+            </h4>
+        }
+        if (i == 2)
+        {
+            <h4 class="text-center">
+                <img src="~/Content/img/icon-champtier-2.png">@usuario.Nome
+            </h4>
+        }
+        if (i == 3)
+        {
+            <h4 class="text-center">
+                <img src="~/Content/img/icon-champtier-3.png">@usuario.Nome
+            </h4>
+        }
+        if (i == 4)
+        {
+            <h4 class="text-center">
+                <img src="~/Content/img/icon-champtier-4.png">@usuario.Nome
+            </h4>
+        }
+        if (i > 4)
+        {
+            <h4 class="text-center">
+                <img src="~/Content/img/icon-champtier-5.png">@usuario.Nome
+            </h4>
+        }
+    }
+
+
+</div>
 

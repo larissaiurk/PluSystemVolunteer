@@ -7,6 +7,8 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+
 
 namespace PluSystemVolunteer.Controllers
 {
@@ -51,26 +53,37 @@ namespace PluSystemVolunteer.Controllers
         {
             Usuario u = new Usuario
             {
-
                 Login = txtEmail,
                 Senha = ComputeSha256Hash(txtSenha)
             };
+<<<<<<< HEAD
 
-             if (UsuarioDAO.Login(u) != null)
+            u = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
+            if (u != null)
+            {
+                //Autenticação - FormsAuthentication
+                FormsAuthentication.SetAuthCookie(u.Login, true);
+                //Sessao.Login(usuario.Email);
+=======
+            
+            Usuario user = UsuarioDAO.Login(u);
+            if (user != null)
             {
 
-                TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
-
+               //FormsAuthentication.SetAuthCookie(usuario.Email, true);
+>>>>>>> master
                 return RedirectToAction("Index", "Home");
-
             }
             else
             {
-
                 TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+<<<<<<< HEAD
+                //return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Usuario");
+=======
                 return RedirectToAction("Index", "Home");
-
                 //return RedirectToAction("Login", "Usuario");
+>>>>>>> master
             }
         }
 
@@ -101,7 +114,8 @@ namespace PluSystemVolunteer.Controllers
                 DataNascimento = DateTime.Now,
                 CriadoEm = DateTime.Now,
                 Login = txtEmail,
-                Senha = ComputeSha256Hash(txtSenha)
+                Senha = ComputeSha256Hash(txtSenha),
+                Administrador = false
             };
 
             UsuarioDAO.CadastrarUsuario(u);

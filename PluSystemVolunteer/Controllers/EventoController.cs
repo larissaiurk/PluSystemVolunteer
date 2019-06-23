@@ -10,7 +10,9 @@ namespace PluSystemVolunteer.Controllers
 {
     public class EventoController : Controller
     {
-        // GET: Evento
+        private Context db = new Context();
+
+        // GET: CategoriaEvento
         public ActionResult Index()
         {
             ViewBag.DataAtual = DateTime.Now;

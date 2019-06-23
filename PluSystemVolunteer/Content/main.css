@@ -28,8 +28,8 @@ div.well {
     background-size: cover;
     opacity: 1;
     filter: alpha(opacity=0);
-    padding-left: 25%;
-    padding-top: 10%;
+    padding-left: 10%;
+    padding-top: 5%;
 }
 
 .body_login
@@ -47,5 +47,30 @@ footer {
     left: 0;
     bottom: 0;
     right: 0;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 7%;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #9C9C9C;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
 }
 
