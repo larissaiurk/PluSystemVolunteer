@@ -121,15 +121,19 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\main.js" />
-    <Content Include="Content\stylesheet.css" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\Shared\_Login_layout.cshtml" />
     <Content Include="Views\Usuario\Listar.cshtml" />
-    <Content Include="Views\Grupo\Create.cshtml" />
-    <Content Include="Views\Grupo\Index.cshtml" />
     <Content Include="Views\Grupo\Cadastrar.cshtml" />
+    <Content Include="Views\Grupo\Index.cshtml" />
+    <Content Include="Views\CategoriaEvento\Cadastrar.cshtml" />
+    <Content Include="Views\CategoriaEvento\Alterar.cshtml" />
+    <Content Include="Views\CategoriaEvento\Index.cshtml" />
+    <Content Include="Views\Evento\Index.cshtml" />
+    <Content Include="Views\Evento\Alterar.cshtml" />
+    <Content Include="Views\Evento\Cadastrar.cshtml" />
     <None Include="Views\Usuario\Login.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -140,19 +144,17 @@
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DAL\CategoriaEventoDAO.cs" />
+    <Compile Include="DAL\EventoDAO.cs" />
     <Compile Include="DAL\GrupoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905312340426_1.cs" />
-    <Compile Include="Migrations\201905312340426_1.Designer.cs">
-      <DependentUpon>201905312340426_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906052300440_teste.cs" />
-    <Compile Include="Migrations\201906052300440_teste.Designer.cs">
-      <DependentUpon>201906052300440_teste.cs</DependentUpon>
+    <Compile Include="Migrations\201906221616579_initial.cs" />
+    <Compile Include="Migrations\201906221616579_initial.Designer.cs">
+      <DependentUpon>201906221616579_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaEvento.cs" />
@@ -184,13 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905312340426_1.resx">
-      <DependentUpon>201905312340426_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906052300440_teste.resx">
-      <DependentUpon>201906052300440_teste.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906221616579_initial.resx">
+      <DependentUpon>201906221616579_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,6 +13,7 @@ namespace PluSystemVolunteer.Models
 
         [Key]
         public int EventoId { get; set; }
+        [Display(Name = "Categoria do Evento")]
         public CategoriaEvento CategoriaEvento { get; set; }
         //public Grupo Grupo { get; set; }
         public String Descricao { get; set; }
