@@ -7,8 +7,6 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
-
 
 namespace PluSystemVolunteer.Controllers
 {
@@ -56,34 +54,20 @@ namespace PluSystemVolunteer.Controllers
                 Login = txtEmail,
                 Senha = ComputeSha256Hash(txtSenha)
             };
-<<<<<<< HEAD
 
-            u = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
-            if (u != null)
-            {
-                //Autenticação - FormsAuthentication
-                FormsAuthentication.SetAuthCookie(u.Login, true);
-                //Sessao.Login(usuario.Email);
-=======
-            
             Usuario user = UsuarioDAO.Login(u);
             if (user != null)
             {
 
-               //FormsAuthentication.SetAuthCookie(usuario.Email, true);
->>>>>>> master
+                //FormsAuthentication.SetAuthCookie(usuario.Email, true);
                 return RedirectToAction("Index", "Home");
+
             }
             else
             {
                 TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
-<<<<<<< HEAD
-                //return RedirectToAction("Index", "Home");
-                return RedirectToAction("Login", "Usuario");
-=======
                 return RedirectToAction("Index", "Home");
                 //return RedirectToAction("Login", "Usuario");
->>>>>>> master
             }
         }
 
@@ -99,7 +83,7 @@ namespace PluSystemVolunteer.Controllers
         {
             return View();
         }
-       
+
 
         [HttpPost]
 
@@ -150,6 +134,6 @@ namespace PluSystemVolunteer.Controllers
             return RedirectToAction("Index", "Usuario");
         }
 
-    
+
     }
 }

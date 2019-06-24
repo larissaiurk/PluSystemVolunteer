@@ -17,8 +17,8 @@ namespace PluSystemVolunteer.Controllers
             return View(db.Grupos.ToList());
         }
 
-        // GET: Categoria/Create
-        public ActionResult Create()
+        // GET: Grupo/Create
+        public ActionResult Cadastrar()
         {
             return View();
         }

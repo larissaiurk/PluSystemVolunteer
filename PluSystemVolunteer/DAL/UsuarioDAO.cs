@@ -14,30 +14,14 @@ namespace PluSystemVolunteer.DAL
             ctx.Usuarios.Add(user);
             ctx.SaveChanges();
         }
-
-
-        public static Usuario BuscarUsuarioPorLogin(Usuario u)
-        {
-            return ctx.Usuarios.FirstOrDefault(x => x.Login.Equals(u.Login));
-        }
-        public static Usuario BuscarUsuarioPorLoginSenha(Usuario usuario)
-        {
-            return ctx.Usuarios.FirstOrDefault(x => x.Login.Equals(usuario.Login) && x.Senha.Equals(usuario.Senha));
-        }
-
-
         public static Usuario Login(Usuario login)
         {
-         try
+            try
             {
                 Usuario user = ctx.Usuarios.Find(login);
                 if (user != null)
                 {
-                    
-<<<<<<< HEAD
 
-=======
->>>>>>> master
                     if (user.Senha.Equals(login.Senha))
                     {
                         return user;
@@ -53,7 +37,8 @@ namespace PluSystemVolunteer.DAL
                 }
 
             }
-            catch {
+            catch
+            {
                 return null;
             }
         }

@@ -15,8 +15,9 @@ namespace PluSystemVolunteer.Controllers
 
         // GET: CategoriaEvento
         public ActionResult Index()
-        { 
-          return View(db.CategoriasEvento.ToList());
+        {
+            ViewBag.DataAtual = DateTime.Now;
+            return View(CategoriaEventoDAO.RetornarCategoriasEvento());
 
         }
 
@@ -30,14 +31,6 @@ namespace PluSystemVolunteer.Controllers
         // GET: CategoriaEvento/Cadastrar
         public ActionResult Cadastrar()
         {
-            return View();
-        }
-
-        // GET: CategoriaEvento/Listar
-        public ActionResult Listar()
-        {
-            ViewBag.DataAtual = DateTime.Now;
-            //ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
             return View();
         }
 
@@ -72,71 +65,68 @@ namespace PluSystemVolunteer.Controllers
             CategoriaEventoDAO.AlterarCategoriaEvento(c);
             return RedirectToAction("Index", "CategoriaEvento");
         }
+        
+        //// POST: CategoriaEvento/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "CategoriaEventoId,Descricao")] CategoriaEvento CategoriaEvento)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.CategoriasEvento.Add(CategoriaEvento);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
+        //    return View(CategoriaEvento);
+        //}
 
+        //// GET: CategoriaEvento/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    CategoriaEvento CategoriaEvento = db.CategoriasEvento.Find(id);
+        //    if (CategoriaEvento == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(CategoriaEvento);
+        //}
 
+        //// POST: CategoriaEvento/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "CategoriaEventoId,Descricao")] CategoriaEvento CategoriaEvento)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(CategoriaEvento).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(CategoriaEvento);
+        //}
 
-        // POST: CategoriaEvento/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategoriaEventoId,Descricao")] CategoriaEvento CategoriaEvento)
-        {
-            if (ModelState.IsValid)
-            {
-                db.CategoriasEvento.Add(CategoriaEvento);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //// GET: CategoriaEvento/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    CategoriaEvento CategoriaEvento = db.CategoriasEvento.Find(id);
+        //    if (CategoriaEvento == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(CategoriaEvento);
+        //}
 
-            return View(CategoriaEvento);
-        }
-
-        // GET: CategoriaEvento/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            CategoriaEvento CategoriaEvento = db.CategoriasEvento.Find(id);
-            if (CategoriaEvento == null)
-            {
-                return HttpNotFound();
-            }
-            return View(CategoriaEvento);
-        }
-
-        // POST: CategoriaEvento/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CategoriaEventoId,Descricao")] CategoriaEvento CategoriaEvento)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(CategoriaEvento).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(CategoriaEvento);
-        }
-
-        // GET: CategoriaEvento/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            CategoriaEvento CategoriaEvento = db.CategoriasEvento.Find(id);
-            if (CategoriaEvento == null)
-            {
-                return HttpNotFound();
-            }
-            return View(CategoriaEvento);
-        }
-
-        // POST: CategoriaEvento/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            CategoriaEvento CategoriaEvento = db.CategoriasEvento.Find(id);
-            db.CategoriasEvento.Remove(CategoriaEvento);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //// POST: CategoriaEvento/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    CategoriaEvento CategoriaEvento = db.CategoriasEvento.Find(id);
+        //    db.CategoriasEvento.Remove(CategoriaEvento);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

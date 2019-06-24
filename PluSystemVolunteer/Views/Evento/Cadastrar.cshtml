@@ -1,7 +1,6 @@
 ﻿@model PluSystemVolunteer.Models.Evento
 
 @{
-  
 }
 
     @using (Html.BeginForm("Cadastrar", "Evento", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
@@ -12,19 +11,58 @@
             <h4> Cadastrar Evento</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <fieldset>
+                <legend>Dados de Endereço</legend>
+                <div id="Cep" class="form-group">
+                    @Html.LabelFor(model => model.Cep, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Cep,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Digite o CEP do local "
+                    })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input class="btn btn-primary" type="submit"
+                               value="Consultar" formaction="ConsultarCep"
+                               formmethod="post" />
+                    </div>
+                </div>
+
+                <div id="Logradouro" class="form-group">
+                    @Html.LabelFor(model => model.Logradouro, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Logradouro, new { @class = "form-control", @placeholder = "Digite o login do usuário", @readonly = "" })
+                    </div>
+                </div>
+
+                <div id="Bairro" class="form-group">
+                    @Html.LabelFor(model => model.Bairro, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Bairro, new { @class = "form-control", @placeholder = "Digite a senha do usuário", @readonly = "" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Complemento", new { @class = "control-label col-sm-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </fieldset>
+
+
             <div class="form-group">
                 @Html.Label("Descrição", new { @class = "control-label col-sm-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.Label("Endereço", new { @class = "control-label col-sm-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Endereço, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Endereço, "", new { @class = "text-danger" })
                 </div>
             </div>
     
