@@ -158,9 +158,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906221616579_initial.cs" />
-    <Compile Include="Migrations\201906221616579_initial.Designer.cs">
-      <DependentUpon>201906221616579_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201906262159507_teste.cs" />
+    <Compile Include="Migrations\201906262159507_teste.Designer.cs">
+      <DependentUpon>201906262159507_teste.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaEvento.cs" />
@@ -195,8 +195,8 @@
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906221616579_initial.resx">
-      <DependentUpon>201906221616579_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906262159507_teste.resx">
+      <DependentUpon>201906262159507_teste.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

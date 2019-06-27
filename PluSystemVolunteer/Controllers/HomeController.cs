@@ -12,6 +12,9 @@ namespace PluSystemVolunteer.Controllers
         // GET: Home
         public ActionResult Index(int? id)
         {
+
+            ViewBag.Eventos = EventoDAO.RetornarEventos();
+
             if (id == null)
             {
                 ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();

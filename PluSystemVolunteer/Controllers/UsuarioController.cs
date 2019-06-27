@@ -7,6 +7,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace PluSystemVolunteer.Controllers
 {
@@ -55,20 +56,18 @@ namespace PluSystemVolunteer.Controllers
                 Senha = ComputeSha256Hash(txtSenha)
             };
 
-            Usuario user = UsuarioDAO.Login(u);
-            if (user != null)
+      
+            Usuario usuario = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
+            if(usuario != null)
             {
-
-                //FormsAuthentication.SetAuthCookie(usuario.Email, true);
+                //Autenticação - FormsAuthentication
+                FormsAuthentication.SetAuthCookie(usuario.Login, true);
+                //Sessao.Login(usuario.Email);
                 return RedirectToAction("Index", "Home");
+            }
+            TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+            return RedirectToAction("Login", "Usuario");
 
-            }
-            else
-            {
-                TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
-                return RedirectToAction("Index", "Home");
-                //return RedirectToAction("Login", "Usuario");
-            }
         }
 
         public ActionResult Listar()

@@ -1,7 +1,47 @@
 ﻿
 @{
     List<PluSystemVolunteer.Models.Usuario> usuarios = ViewBag.Usuarios;
+    List<PluSystemVolunteer.Models.Evento>  eventos   = ViewBag.Eventos;
 }
+
+
+@foreach (PluSystemVolunteer.Models.Evento evento in eventos)
+{
+}
+<div class="offset-1 col-md-8">
+
+    <div class="event_title"><h3>Eventos Disponíveis para Inscrição</h3></div>
+
+   
+    @foreach (PluSystemVolunteer.Models.Evento evento in eventos)
+    {
+        <div class="event_div">
+            <div class="text-center">
+                <h1>@evento.Descricao na data: @evento.Data</h1>
+                <p>Local do Evento:@evento.Logradouro</p>
+                <p>@evento.Bairro</p>
+                <p>@evento.Complemento</p>
+                <p>CEP:@evento.Cep</p>
+                <p>Preço:@evento.Preco</p>
+                @using (Html.BeginForm("Evento", "Usuario", FormMethod.Post, new { @class = "form-horizontal", @id = "cadastrarUsuario", enctype = "multipart/form-data" }))
+                {
+                    @Html.Hidden("idUsuario", "", new { @class = "form-control", @id = "idUsuario", @value = '2' })
+                    @Html.Hidden("idEvento", "", new { @class = "form-control", @value = evento.EventoId })
+                    <input style="margin-bottom:50px" value="Inscrever-se" type="submit" class="btn btn-success text-center">
+
+                } 
+                <iframe width="200" height="200" frameborder="0" style="border:1px; margin-left:70%"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=Space+Needle,Seattle+WA" allowfullscreen></iframe> 
+            
+            </div>
+            
+           
+        </div>
+        <br>
+    }
+   
+   
+</div>
 <div class="sidenav">
     <h3 class="text-center" style="color:#9C9C9C">RANKING Voluntários</h3>
     <hr>

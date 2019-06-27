@@ -8,7 +8,6 @@
     <link href="~/Content/main.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="~/Content/main.js"></script>
-    <link rel="stylesheet" href="~/Content/stylesheet.css">
 
 
 </head>
@@ -28,9 +27,7 @@
                 <li class="nav-item">
                     @Html.ActionLink("Perfil", "Cadastrar", "Usuario", null, new { @class = "nav-link" })
                 </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Grupo", "Index", "Grupo", null, new { @class = "nav-link" })
-                </li>
+              
                 <li class="nav-item">
                     @Html.ActionLink("Categoria Evento", "Index", "CategoriaEvento", null, new { @class = "nav-link" })
                 </li>
@@ -48,7 +45,7 @@
         </div>
     </nav>
 
-    <div id="conteudo" class="container"
+    <div id="conteudo" class="container-fluid"
          style="margin-top:30px;margin-bottom:30px">
         @RenderBody()
     </div>

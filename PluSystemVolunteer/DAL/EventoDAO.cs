@@ -19,13 +19,15 @@ namespace PluSystemVolunteer.DAL
             }
             return false;
         }
+
+    
         public static Evento BuscarEventoPorNome(Evento evento)
         {
             return ctx.Eventos.FirstOrDefault(x => x.Descricao.Equals(evento.Descricao));
         }
         public static List<Evento> RetornarEventos()
         {
-            return ctx.Eventos.ToList();
+            return ctx.Eventos.OrderBy(x => x.Data).ToList();
         }
         public static Evento BuscarEventoPorId(int? id)
         {
