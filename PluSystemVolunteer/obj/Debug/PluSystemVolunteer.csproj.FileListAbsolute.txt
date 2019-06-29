@@ -98,8 +98,6 @@ D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Webpages
 D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Helpers.xml
 D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Mvc.xml
 D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csprojResolveAssemblyReference.cache
-D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.TesteInicial.resources
-D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
 D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.dll
 D:\Universidade\oo\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.pdb
 C:\Users\Aluno\Desktop\PluSystemVolunteer-master\PluSystemVolunteer-master\PluSystemVolunteer\bin\ApplicationInsights.config
@@ -635,3 +633,18 @@ C:\Users\Aluno\Desktop\PluSystem\PluSystemVolunteer\PluSystem\PluSystemVolunteer
 C:\Users\Aluno\Desktop\PluSystem\PluSystemVolunteer\PluSystem\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\Aluno\Desktop\PluSystem\PluSystemVolunteer\PluSystem\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.teste.resources
 C:\Users\Aluno\Desktop\PluSystem\PluSystemVolunteer\PluSystem\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\Newtonsoft.Json.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\System.Net.Http.Formatting.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Http.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Http.WebHost.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\Newtonsoft.Json.xml
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\System.Net.Http.Formatting.xml
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Http.xml
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Http.WebHost.xml
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.Helpers.resources.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.Razor.resources.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.resources.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.initial.resources
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
