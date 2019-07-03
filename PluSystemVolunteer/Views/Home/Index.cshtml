@@ -1,7 +1,11 @@
 ﻿
 @{
     List<PluSystemVolunteer.Models.Usuario> usuarios = ViewBag.Usuarios;
-    List<PluSystemVolunteer.Models.Evento>  eventos   = ViewBag.Eventos;
+    List<PluSystemVolunteer.Models.Evento> eventos = ViewBag.Eventos;
+    int idUsuario = Convert.ToInt32(HttpContext.Current.Session["usuario"]);
+    int admin = Convert.ToInt32(HttpContext.Current.Session["administrador"]);
+    
+
 }
 
 
@@ -12,7 +16,7 @@
 
     <div class="event_title"><h3>Eventos Disponíveis para Inscrição</h3></div>
 
-   
+
     @foreach (PluSystemVolunteer.Models.Evento evento in eventos)
     {
         <div class="event_div">
@@ -23,20 +27,20 @@
                 <p>@evento.Complemento</p>
                 <p>CEP:@evento.Cep</p>
                 <p>Preço:@evento.Preco</p>
-                    @*<input style="margin-bottom:50px" value="Inscrever-se" type="submit" class="btn btn-success text-center">*@
-                @Html.ActionLink("Inscrever-se", "InscreverEvento", "Usuario", new { idEvento = evento.EventoId, idUsuario = 1 }, new { @class = "btn btn-success text-center" })
+                @*<input style="margin-bottom:50px" value="Inscrever-se" type="submit" class="btn btn-success text-center">*@
+                @Html.ActionLink("Inscrever-se", "InscreverEvento", "Usuario", new { idEvento = evento.EventoId, idUsuario = idUsuario }, new { @class = "btn btn-success text-center" })
 
                 <iframe width="200" height="200" frameborder="0" style="border:1px; margin-left:70%"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=Space+Needle,Seattle+WA" allowfullscreen></iframe> 
-            
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>
+
             </div>
-            
-           
+
+
         </div>
         <br>
     }
-   
-   
+
+
 </div>
 <div class="sidenav">
     <h3 class="text-center" style="color:#9C9C9C">RANKING Voluntários</h3>

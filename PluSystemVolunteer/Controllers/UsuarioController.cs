@@ -8,6 +8,8 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using PluSystemVolunteer.utils;
+
 
 namespace PluSystemVolunteer.Controllers
 {
@@ -60,9 +62,13 @@ namespace PluSystemVolunteer.Controllers
             Usuario usuario = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
             if(usuario != null)
             {
-                //Autenticação - FormsAuthentication
-                FormsAuthentication.SetAuthCookie(usuario.Login, true);
-                //Sessao.Login(usuario.Email);
+              
+
+                //Cria uma sessão com o usuario e o status de administrador
+                Sessao.Login(usuario.UsuarioId.ToString(), usuario.Administrador);
+                ViewBag.idUsuario = Sessao.RetornarUsuario();
+                ViewBag.admin     = Sessao.RetornarStatus();
+
                 return RedirectToAction("Index", "Home");
             }
             TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
@@ -135,13 +141,21 @@ namespace PluSystemVolunteer.Controllers
 
         public ActionResult InscreverEvento(int idEvento, int idUsuario)
         {
-            Usuario u = UsuarioDAO.BuscarUsuarioPorId(idUsuario);
-            Evento e = EventoDAO.BuscarEventoPorId(idEvento);
-            ListaPresencaEvento lista = new ListaPresencaEvento();
-            lista.Usuario = u;
-            lista.Evento = e;
-            ListaPresencaDAO.RegistrarInscricaoEvento(lista);
-            return RedirectToAction("Index", "Home");
+            //verifica se existe uma sessão se não volta para a pagina inicial
+            if (Sessao.RetornarUsuario() != 0)
+            {
+                 Usuario u = UsuarioDAO.BuscarUsuarioPorId(idUsuario);
+                Evento e = EventoDAO.BuscarEventoPorId(idEvento);
+                ListaPresencaEvento lista = new ListaPresencaEvento();
+                lista.Usuario = u;
+                lista.Evento = e;
+                ListaPresencaDAO.RegistrarInscricaoEvento(lista);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
         }
 
     }

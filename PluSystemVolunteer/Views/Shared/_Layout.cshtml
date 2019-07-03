@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    int idUsuario =  Convert.ToInt32(HttpContext.Current.Session["usuario"]);
+    int admin = Convert.ToInt32(HttpContext.Current.Session["administrador"]);
+   }
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -22,21 +28,22 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    @Html.ActionLink("Home", "Index", "Home",null, new { @class="nav-link"}) <span class="sr-only">(current)</span>
+                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" }) <span class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item">
                     @Html.ActionLink("Perfil", "Cadastrar", "Usuario", null, new { @class = "nav-link" })
                 </li>
-              
-                <li class="nav-item">
-                    @Html.ActionLink("Categoria Evento", "Index", "CategoriaEvento", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Eventos", "Index", "Evento", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Ranking", "Index", "Home", null, new { @class = "nav-link" })
-                </li>
+                @{ if (admin != 0) {
+                            <li class="nav-item">
+                                @Html.ActionLink("Categoria Evento", "Index", "CategoriaEvento", null, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Eventos", "Index", "Evento", null, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Ranking", "Index", "Home", null, new { @class = "nav-link" })
+                            </li>
+                        } }
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span> Sign Up</a></li>
@@ -50,13 +57,13 @@
         @RenderBody()
     </div>
 
-   @* <footer>
-        <hr />
-        <p style="text-align:center">
-            Desenvolvido por Plu System &copy;
-            @DateTime.Now.Year
-        </p>
-    </footer> *@
+    @* <footer>
+            <hr />
+            <p style="text-align:center">
+                Desenvolvido por Plu System &copy;
+                @DateTime.Now.Year
+            </p>
+        </footer> *@
 
 </body>
 </html>
