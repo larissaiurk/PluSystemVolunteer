@@ -20,9 +20,7 @@
             <th>
                 Data
             </th>
-            <th>
-                Imagem
-            </th>
+           
             <th></th>
         </tr>
     
@@ -40,10 +38,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
-            <td>
-                <img src="~/Images/@item.Imagem" alt="@item.Descricao"
-                     style="width:100px" />
-            </td>
+           
             <td>
                 @Html.ActionLink("Alterar", "Alterar", new { id=item.EventoId }) |
                 @Html.ActionLink("Remover", "Remover", new { id=item.EventoId })

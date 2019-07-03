@@ -14,45 +14,25 @@
 
             <fieldset>
                 <legend>Dados de Endereço</legend>
-                <div id="Cep" class="form-group">
+            
+                <div class="form-group">
                     @Html.LabelFor(model => model.Cep, new { @class = "control-label col-sm-2" })
                     <div class="col-sm-10">
-                        @Html.TextBoxFor(model => model.Cep,
-                    new
-                    {
-                        @class = "form-control",
-                        @placeholder = "Digite o CEP do local "
-                    })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <input class="btn btn-primary" type="submit"
-                               value="Consultar" formaction="ConsultarCep"
-                               formmethod="post" />
+                        @Html.TextBoxFor(model => model.Cep, new { @class = "form-control", @placeholder = "Digite o cep" })
                     </div>
                 </div>
 
                 <div id="Logradouro" class="form-group">
                     @Html.LabelFor(model => model.Logradouro, new { @class = "control-label col-sm-2" })
                     <div class="col-sm-10">
-                        @Html.TextBoxFor(model => model.Logradouro, new { @class = "form-control", @placeholder = "Digite o login do usuário"})
+                        @Html.TextBoxFor(model => model.Logradouro, new { @class = "form-control", @placeholder = "Digite o Endereço do local"})
                     </div>
                 </div>
 
                 <div id="Bairro" class="form-group">
                     @Html.LabelFor(model => model.Bairro, new { @class = "control-label col-sm-2" })
                     <div class="col-sm-10">
-                        @Html.TextBoxFor(model => model.Bairro, new { @class = "form-control", @placeholder = "Digite a senha do usuário"})
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Complemento", new { @class = "control-label col-sm-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.Bairro, new { @class = "form-control", @placeholder = "Digite o bairro do local"})
                     </div>
                 </div>
             </fieldset>
@@ -91,13 +71,7 @@
                 </div>
             </div>
 
-            <div id="Imagem" class="form-group">
-                @Html.Label("Imagem", new { @class = "control-label col-sm-2" })
-                <div class="col-sm-10">
-                    <input type="file" name="fupImagem" id="fupImagem"
-                           class="form-control-file" />
-                </div>
-            </div>
+     
     
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

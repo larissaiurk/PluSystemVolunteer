@@ -2,46 +2,97 @@
 @{
     List<PluSystemVolunteer.Models.Usuario> usuarios = ViewBag.Usuarios;
     List<PluSystemVolunteer.Models.Evento> eventos = ViewBag.Eventos;
-    int idUsuario = Convert.ToInt32(HttpContext.Current.Session["usuario"]);
-    int admin = Convert.ToInt32(HttpContext.Current.Session["administrador"]);
 
 
 }
 
+<div class="row">
+    <div class="col-md-4">
 
-@foreach (PluSystemVolunteer.Models.Evento evento in eventos)
-{
-}
-<div class="offset-1 col-md-8">
+        @using PluSystemVolunteer.Models;
 
-    <div class="event_title"><h3>Eventos Disponíveis para Inscrição</h3></div>
+        @{
+            Usuario u = ViewBag.Usuario;
+        }
+
+        @using (Html.BeginForm("Alterar", "Usuario", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @*<input type="text" readonly="" class="" placeholder="" />*@
+            @Html.Hidden("hdnId", u.UsuarioId)
+            <fieldset>
+                <legend>Editar Usuário</legend>
+
+                <div id="Nome" class="form-group">
+                    @Html.Label("Nome", new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBox("txtNome", u.Nome, new { @class = "form-control", @placeholder = "Digite o nome do usuário" })
+                    </div>
+                </div>
+
+                <div id="Apelido" class="form-group">
+                    @Html.Label("Apelido", new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBox("txtApelido", u.Apelido, new { @class = "form-control", @placeholder = "Digite o apelido do usuário" })
+                    </div>
+                </div>
+
+                <div id="Telefone" class="form-group">
+                    @Html.Label("Telefone", new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBox("txtTelefone", u.Telefone, new { @class = "form-control", @placeholder = "Digite o telefone do usuário" })
+                    </div>
+                </div>
+
+                <div id="Telefone" class="form-group">
+                    @Html.Label("Senha", new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.Password("txtSenha", "", new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input class="btn btn-primary" type="submit"
+                               value="Salvar" />
+                    </div>
+                </div>
+            </fieldset>
+        }
+    </div>
+    <div class="offset-2 col-md-6">
+        <h2>Eventos Inscritos</h2>
+        @{ if (eventos != null)
+            {
 
 
-    @foreach (PluSystemVolunteer.Models.Evento evento in eventos)
-    {
-        <div class="event_div">
-            <div class="text-center">
-                <h1>@evento.Descricao na data: @evento.Data</h1>
-                <p>Local do Evento:@evento.Logradouro</p>
-                <p>@evento.Bairro</p>
-                <p>@evento.Complemento</p>
-                <p>CEP:@evento.Cep</p>
-                <p>Preço:@evento.Preco</p>
-                @*<input style="margin-bottom:50px" value="Inscrever-se" type="submit" class="btn btn-success text-center">*@
-                @Html.ActionLink("Inscrever-se", "InscreverEvento", "Usuario", new { idEvento = evento.EventoId, idUsuario = idUsuario }, new { @class = "btn btn-success text-center" })
+                foreach (PluSystemVolunteer.Models.Evento evento in eventos)
+                {
+                        <div class="event_div">
+                            <div class="text-center">
+                                <h1>@evento.Descricao na data: @evento.Data</h1>
+                                <p>Local do Evento:@evento.Logradouro</p>
+                                <p>@evento.Bairro</p>
+                                <p>@evento.Complemento</p>
+                                <p>CEP:@evento.Cep</p>
+                                <p>Preço:@evento.Preco</p>
+                                @*<input style="margin-bottom:50px" value="Inscrever-se" type="submit" class="btn btn-success text-center">*@
 
-                <iframe width="200" height="200" frameborder="0" style="border:1px; margin-left:70%"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>
+                                <iframe width="200" height="200" frameborder="0" style="border:1px; margin-left:70%"
+                                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>
 
-            </div>
+                            </div>
 
 
-        </div>
-        <br>
-    }
+                        </div>
+                        <br>
+                    }
 
+                }
+            }
+    </div>
 
 </div>
+
 <div class="sidenav">
     <h3 class="text-center" style="color:#9C9C9C">RANKING Voluntários</h3>
     <hr>
@@ -84,4 +135,5 @@
 
 
 </div>
+
 

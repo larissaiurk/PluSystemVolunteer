@@ -66,9 +66,6 @@ namespace PluSystemVolunteer.Controllers
 
                 //Cria uma sessão com o usuario e o status de administrador
                 Sessao.Login(usuario.UsuarioId.ToString(), usuario.Administrador);
-                ViewBag.idUsuario = Sessao.RetornarUsuario();
-                ViewBag.admin     = Sessao.RetornarStatus();
-
                 return RedirectToAction("Index", "Home");
             }
             TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
@@ -131,8 +128,35 @@ namespace PluSystemVolunteer.Controllers
             return View();
         }
 
+
+        public ActionResult Perfil()
+        {
+
+            if (Sessao.RetornarUsuario() != 0)
+            {
+
+                //eventos
+
+
+                //ViewBag.Eventos = ListaPresencaDAO.RetornarInscricoesporIdUsuario(Sessao.RetornarUsuario());
+
+
+                //ranking usuarios
+                ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
+
+                //form
+                ViewBag.Usuario = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
+            }
+
+
         [HttpPost]
-        public ActionResult Alterar(string txtNome, string txtApelido, string txtTelefone, int hdnId, int txtId)
+        public ActionResult Alterar(string txtNome, string txtApelido, string txtTelefone, int hdnId, int txtId, string txtSenha )
         {
             Usuario u = UsuarioDAO.BuscarUsuarioPorId(txtId);
             u.Nome = txtNome;
@@ -140,8 +164,10 @@ namespace PluSystemVolunteer.Controllers
             u.Telefone = txtTelefone;
             u.DataNascimento = DateTime.Now;
             u.CriadoEm = DateTime.Now;
-            u.Login = "";
-            u.Senha = "";
+            if (txtSenha != "") {
+
+                u.Senha = ComputeSha256Hash(txtSenha);
+            }
 
             UsuarioDAO.AlterarUsuario(u);
             return RedirectToAction("Index", "Usuario");

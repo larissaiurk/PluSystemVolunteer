@@ -15,9 +15,9 @@ namespace PluSystemVolunteer.Controllers
         {
             if (Sessao.RetornarUsuario() != 0)
             {
-
-                ViewBag.Eventos = EventoDAO.RetornarEventos();
-
+                //eventos
+                     ViewBag.Eventos = EventoDAO.RetornarEventos();
+                //ranking usuarios
                     ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
 
                     return View();
