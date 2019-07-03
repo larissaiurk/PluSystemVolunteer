@@ -19,5 +19,15 @@ namespace PluSystemVolunteer.DAL
             }
             return false;
         }
+        public static List<ListaPresencaEvento> RetornarListas()
+        {
+            return ctx.Listas.ToList();
+        }
+
+        public static List<ListaPresencaEvento> RetornarListaPresencaPorEvento(int idEvento)
+        {
+            idEvento = 1;
+            return ctx.Listas.Where(x => x.Evento.EventoId.Equals(idEvento)).ToList();
+        }
     }
 }

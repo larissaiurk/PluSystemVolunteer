@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PluSystemVolunteer.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace PluSystemVolunteer.Controllers
         // GET: ListaPresenca
         public ActionResult Index()
         {
-            return View();
+            return View(ListaPresencaDAO.RetornarListas());
         }
     }
 }

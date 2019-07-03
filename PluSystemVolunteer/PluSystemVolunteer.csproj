@@ -157,6 +157,7 @@
     <Content Include="Views\Evento\Index.cshtml" />
     <Content Include="Views\Evento\Alterar.cshtml" />
     <Content Include="Views\Evento\Cadastrar.cshtml" />
+    <Content Include="Views\ListaPresenca\Index.cshtml" />
     <None Include="Views\Usuario\Login.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -219,7 +220,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\ListaPresenca\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906290100377_initial.resx">
