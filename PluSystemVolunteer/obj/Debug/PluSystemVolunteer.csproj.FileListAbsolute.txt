@@ -648,3 +648,4 @@ D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.We
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.initial.resources
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.lista.resources

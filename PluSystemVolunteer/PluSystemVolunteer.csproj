@@ -44,14 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -176,11 +168,13 @@
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListaPresencaController.cs" />
     <Compile Include="Controllers\UsuarioApiController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\CategoriaEventoDAO.cs" />
     <Compile Include="DAL\EventoDAO.cs" />
     <Compile Include="DAL\GrupoDAO.cs" />
+    <Compile Include="DAL\ListaPresencaDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,6 +183,10 @@
     <Compile Include="Migrations\201906290100377_initial.cs" />
     <Compile Include="Migrations\201906290100377_initial.Designer.cs">
       <DependentUpon>201906290100377_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907030112157_lista.cs" />
+    <Compile Include="Migrations\201907030112157_lista.Designer.cs">
+      <DependentUpon>201907030112157_lista.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaEvento.cs" />
@@ -221,10 +219,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\ListaPresenca\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906290100377_initial.resx">
       <DependentUpon>201906290100377_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907030112157_lista.resx">
+      <DependentUpon>201907030112157_lista.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

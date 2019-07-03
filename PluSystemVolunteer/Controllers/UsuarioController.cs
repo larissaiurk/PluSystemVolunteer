@@ -133,6 +133,16 @@ namespace PluSystemVolunteer.Controllers
             return RedirectToAction("Index", "Usuario");
         }
 
+        public ActionResult InscreverEvento(int idEvento, int idUsuario)
+        {
+            Usuario u = UsuarioDAO.BuscarUsuarioPorId(idUsuario);
+            Evento e = EventoDAO.BuscarEventoPorId(idEvento);
+            ListaPresencaEvento lista = new ListaPresencaEvento();
+            lista.Usuario = u;
+            lista.Evento = e;
+            ListaPresencaDAO.RegistrarInscricaoEvento(lista);
+            return RedirectToAction("Index", "Home");
+        }
 
     }
 }
