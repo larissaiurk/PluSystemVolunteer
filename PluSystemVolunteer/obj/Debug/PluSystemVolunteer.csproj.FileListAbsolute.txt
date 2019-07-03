@@ -650,9 +650,6 @@ D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolu
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.lista.resources
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csprojAssemblyReference.cache
-C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.initial.resources
-C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.lista.resources
-C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.cache
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.CoreCompileInputs.cache
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.dll
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.pdb
@@ -717,3 +714,5 @@ C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.We
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.CopyComplete
+C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.att.resources
+C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.cache

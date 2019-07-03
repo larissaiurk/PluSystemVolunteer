@@ -19,6 +19,7 @@ namespace PluSystemVolunteer.DAL
             }
             return false;
         }
+
         public static List<ListaPresencaEvento> RetornarListas()
         {
             return ctx.Listas.ToList();

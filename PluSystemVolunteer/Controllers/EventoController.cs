@@ -23,7 +23,7 @@ namespace PluSystemVolunteer.Controllers
         public ActionResult Cadastrar()
         {
             ViewBag.DataAtual = DateTime.Now;
-            ViewBag.Categorias = new SelectList(CategoriaEventoDAO.RetornarCategoriasEvento(), "CategoriaEventoId", "Descricao");
+            ViewBag.Categorias = new SelectList(CategoriaEventoDAO.RetornarCategoriasEvento(), "CategoriaId", "Descricao");
             return View();
         }
 
@@ -31,7 +31,7 @@ namespace PluSystemVolunteer.Controllers
         public ActionResult Listar()
         {
             ViewBag.DataAtual = DateTime.Now;
-            ViewBag.Categorias = new SelectList(CategoriaEventoDAO.RetornarCategoriasEvento(), "CategoriaEventoId", "Descricao");
+            ViewBag.Categorias = new SelectList(CategoriaEventoDAO.RetornarCategoriasEvento(), "CategoriaId", "Descricao");
             return View();
         }
 
@@ -40,7 +40,7 @@ namespace PluSystemVolunteer.Controllers
         {
             evento.Data = DateTime.Now;
 
-            ViewBag.Categorias = new SelectList(CategoriaEventoDAO.RetornarCategoriasEvento(), "CategoriaId", "Nome");
+            ViewBag.Categorias = new SelectList(CategoriaEventoDAO.RetornarCategoriasEvento(), "CategoriaId", "Descricao");
             //Validação das anotações que foram definidas no modelo
             if (ModelState.IsValid)
             {

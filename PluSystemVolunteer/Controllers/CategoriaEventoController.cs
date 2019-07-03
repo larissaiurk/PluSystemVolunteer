@@ -60,16 +60,16 @@ namespace PluSystemVolunteer.Controllers
         [HttpPost]
         public ActionResult Alterar(CategoriaEvento cat)
         {
-            CategoriaEvento c = CategoriaEventoDAO.BuscarCatEventoPorId(cat.CategoriaEventoId);
+            CategoriaEvento c = CategoriaEventoDAO.BuscarCatEventoPorId(cat.CategoriaId);
             c.Descricao = cat.Descricao;
             CategoriaEventoDAO.AlterarCategoriaEvento(c);
             return RedirectToAction("Index", "CategoriaEvento");
         }
-        
+
         //// POST: CategoriaEvento/Create
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "CategoriaEventoId,Descricao")] CategoriaEvento CategoriaEvento)
+        //public ActionResult Create([Bind(Include = "CategoriaId,Descricao")] CategoriaEvento CategoriaEvento)
         //{
         //    if (ModelState.IsValid)
         //    {
@@ -95,7 +95,7 @@ namespace PluSystemVolunteer.Controllers
         //// POST: CategoriaEvento/Edit/5
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "CategoriaEventoId,Descricao")] CategoriaEvento CategoriaEvento)
+        //public ActionResult Edit([Bind(Include = "CategoriaId,Descricao")] CategoriaEvento CategoriaEvento)
         //{
         //    if (ModelState.IsValid)
         //    {

@@ -11,7 +11,7 @@ namespace PluSystemVolunteer.Models
     public class CategoriaEvento
     {
         [Key]
-        public int CategoriaEventoId { get; set; }
+        public int CategoriaId { get; set; }
         public String Descricao { get; set; }
     }
 }

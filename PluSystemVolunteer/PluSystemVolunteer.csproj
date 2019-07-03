@@ -135,6 +135,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DbPluSystemVolunteer.mdf" />
+    <Content Include="App_Data\DbPluSystemVolunteer_log.ldf">
+      <DependentUpon>DbPluSystemVolunteer.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\img\icon-champtier-1.png" />
     <Content Include="Content\img\icon-champtier-2.png" />
@@ -181,13 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906290100377_initial.cs" />
-    <Compile Include="Migrations\201906290100377_initial.Designer.cs">
-      <DependentUpon>201906290100377_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907030112157_lista.cs" />
-    <Compile Include="Migrations\201907030112157_lista.Designer.cs">
-      <DependentUpon>201907030112157_lista.cs</DependentUpon>
+    <Compile Include="Migrations\201907031545058_att.cs" />
+    <Compile Include="Migrations\201907031545058_att.Designer.cs">
+      <DependentUpon>201907031545058_att.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaEvento.cs" />
@@ -211,6 +211,7 @@
     <Content Include="Views\Usuario\Cadastrar.cshtml" />
     <Content Include="Views\Usuario\Alterar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Usuario\Perfil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -219,15 +220,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906290100377_initial.resx">
-      <DependentUpon>201906290100377_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907030112157_lista.resx">
-      <DependentUpon>201907030112157_lista.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907031545058_att.resx">
+      <DependentUpon>201907031545058_att.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

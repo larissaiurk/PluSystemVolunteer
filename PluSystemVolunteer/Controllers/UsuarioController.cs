@@ -76,6 +76,14 @@ namespace PluSystemVolunteer.Controllers
 
         }
 
+        public ActionResult Logout()
+        {
+            Sessao.ZerarSessao();
+
+            return RedirectToAction("Login", "Usuario");
+
+        }
+
         public ActionResult Listar()
         {
             ViewBag.DataAtual = DateTime.Now;
