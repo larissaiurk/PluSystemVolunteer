@@ -68,19 +68,23 @@ namespace PluSystemVolunteer.Controllers
 
 
                 Usuario usuario = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
-                if (usuario != null)
+                if (usuario.Status == true | usuario.Administrador == true)
                 {
+                    if (usuario != null)
+                    {
 
 
-                    //Cria uma sessão com o usuario e o status de administrador
-                    Sessao.Login(usuario.UsuarioId.ToString(), usuario.Administrador);
-                    return RedirectToAction("Index", "Home");
+                        //Cria uma sessão com o usuario e o status de administrador
+                        Sessao.Login(usuario.UsuarioId.ToString(), usuario.Administrador);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+                    return RedirectToAction("Login", "Usuario");
                 }
-                TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+                TempData["Error"] = "O administrador precisa validar seu cadastro ainda, aguarde alguns dias e tente novamente!!";
                 return RedirectToAction("Login", "Usuario");
-            
-          
-          
+
+
         }
 
         public ActionResult Logout()
@@ -105,6 +109,23 @@ namespace PluSystemVolunteer.Controllers
         }
 
 
+        public ActionResult Cadastros()
+        {
+            ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
+
+            return View();
+        }
+
+        public ActionResult ValidarCadastro(int id)
+        {
+            Usuario usuario = UsuarioDAO.BuscarUsuarioPorId(id);
+            usuario.Status = true;
+            UsuarioDAO.AlterarUsuario(usuario);
+
+            return RedirectToAction("Cadastros", "Usuario");
+
+        }
+
         [HttpPost]
 
         public ActionResult Cadastrar(string txtNome, string txtTelefone, string txtEmail, string txtSenha)
@@ -119,7 +140,8 @@ namespace PluSystemVolunteer.Controllers
                 CriadoEm = DateTime.Now,
                 Login = txtEmail,
                 Senha = ComputeSha256Hash(txtSenha),
-                Administrador = false
+                Administrador = false,
+                Status = false
             };
 
             UsuarioDAO.CadastrarUsuario(u);
@@ -188,12 +210,18 @@ namespace PluSystemVolunteer.Controllers
             //verifica se existe uma sessão se não volta para a pagina inicial
             if (Sessao.RetornarUsuario() != 0)
             {
-                 Usuario u = UsuarioDAO.BuscarUsuarioPorId(idUsuario);
+                Usuario usuario = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
+                usuario.Pontuacao = +1;
+                UsuarioDAO.AlterarUsuario(usuario);
+                Usuario u = UsuarioDAO.BuscarUsuarioPorId(idUsuario);
                 Evento e = EventoDAO.BuscarEventoPorId(idEvento);
                 ListaPresencaEvento lista = new ListaPresencaEvento();
                 lista.Usuario = u;
                 lista.Evento = e;
-                ListaPresencaDAO.RegistrarInscricaoEvento(lista);
+                if (ListaPresencaDAO.RegistrarInscricaoEvento(lista) == false)
+                {
+                    TempData["Error"] = "Você já se cadastrou neste evento!!";
+                }
                 return RedirectToAction("Index", "Home");
             }
             else

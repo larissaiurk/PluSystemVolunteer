@@ -11,15 +11,28 @@ namespace PluSystemVolunteer.DAL
         private static Context ctx = SingletonContext.GetInstance();
         public static bool RegistrarInscricaoEvento(ListaPresencaEvento lista)
         {
-            if (lista.Usuario != null && lista.Evento !=null)
+            //verifica se existe uma inscrição
+            if (BuscarUsuarioeEvento(lista) == null)
             {
-                ctx.Listas.Add(lista);
-                ctx.SaveChanges();
-                return true;
+                if (lista.Usuario != null && lista.Evento != null)
+                {
+                    ctx.Listas.Add(lista);
+                    ctx.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            return false;
+            else
+            {
+                return false;
+             }
         }
 
+
+        public static ListaPresencaEvento BuscarUsuarioeEvento(ListaPresencaEvento lista)
+        {
+            return ctx.Listas.FirstOrDefault(x => x.Usuario.UsuarioId.Equals(lista.Usuario.UsuarioId) && x.Evento.EventoId.Equals(lista.Evento.EventoId));
+        }
         public static List<ListaPresencaEvento> RetornarListas()
         {
             return ctx.Listas.ToList();

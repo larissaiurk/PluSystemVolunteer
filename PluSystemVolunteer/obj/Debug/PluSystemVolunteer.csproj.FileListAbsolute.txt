@@ -778,8 +778,6 @@ C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\
 C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.CopyComplete
-C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.s.resources
-C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.cache
 C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\bin\ApplicationInsights.config
 C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\bin\roslyn\csc.exe
 C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -857,3 +855,5 @@ C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Ht
 C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\bin\System.Web.Http.WebHost.xml
 C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.lista.resources
 C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
+C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.alteracao.resources
+C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.cache
