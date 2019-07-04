@@ -14,5 +14,7 @@ namespace PluSystemVolunteer.Models
         public int ListaPresencaId { get; set; }
         public Evento Evento { get; set; }
         public Usuario Usuario { get; set; }
+
+        public Boolean Validada { get; set; }
     }
 }

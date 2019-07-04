@@ -28,7 +28,17 @@
                 <p>CEP:@evento.Cep</p>
                 <p>Preço:@evento.Preco</p>
                 @*<input style="margin-bottom:50px" value="Inscrever-se" type="submit" class="btn btn-success text-center">*@
-                @Html.ActionLink("Inscrever-se", "InscreverEvento", "Usuario", new { idEvento = evento.EventoId, idUsuario = idUsuario }, new { @class = "btn btn-success text-center" })
+                @Html.ActionLink("Inscrever-se", "InscreverEvento", "Usuario", new { idEvento = evento.EventoId , idUsuario = idUsuario}, new { @class = "btn btn-success text-center" })
+
+                @{
+
+                    if (admin != 0)
+                    {
+                        @Html.ActionLink("Lista Presença", "Index", "ListaPresenca", new { idEvento = evento.EventoId }, new { @class = "btn btn-success text-center" })
+
+                    } }
+               
+
 
                 <iframe width="200" height="200" frameborder="0" style="border:1px; margin-left:70%"
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=@evento.Logradouro+@evento.Bairro+@evento.Cep+BR" allowfullscreen></iframe>

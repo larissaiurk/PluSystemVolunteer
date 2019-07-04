@@ -27,11 +27,16 @@ namespace PluSystemVolunteer.DAL
 
         public static List<ListaPresencaEvento> RetornarListaPresencaPorEvento(int idEvento)
         {
-            idEvento = 1;
             return ctx.Listas.Where(x => x.Evento.EventoId.Equals(idEvento)).ToList();
         }
 
-        
+        public static ListaPresencaEvento RetornarListaPresencaPorUsuario(int idEvento, int idUsuario)
+        {
+            return ctx.Listas.FirstOrDefault(x => x.Evento.EventoId.Equals(idEvento) && x.Usuario.UsuarioId.Equals(idUsuario));
+        }
+
+
+
         public static bool VerificarAlgoLista(int idUsuario)
         {
             if(ctx.Listas.Where(x => x.Usuario.Equals(idUsuario)).ToList() != null)
@@ -50,6 +55,36 @@ namespace PluSystemVolunteer.DAL
         {
             return ctx.Listas.Where(x => x.Usuario.UsuarioId.Equals(idUsuario)).ToList();
 
+        }
+
+        public static void CancelarPresenca(int idEvento, int idUsuario)
+        {
+            ListaPresencaEvento i = RetornarListaPresencaPorUsuario(idEvento, idUsuario);
+            if (i != null)
+            {
+                i.Validada = false;
+                ctx.Entry(i).State = System.Data.Entity.EntityState.Modified;
+                ctx.SaveChanges();
+            }
+            Usuario u = UsuarioDAO.BuscarUsuarioPorId(idUsuario);
+            u.Pontuacao -= 1;
+            ctx.Entry(u).State = System.Data.Entity.EntityState.Modified;
+            ctx.SaveChanges();
+        }
+
+        public static void ValidarPresenca(int idEvento, int idUsuario)
+        {
+            ListaPresencaEvento i = RetornarListaPresencaPorUsuario(idEvento, idUsuario);
+            if (i != null)
+            {
+                i.Validada = true;
+                ctx.Entry(i).State = System.Data.Entity.EntityState.Modified;
+                ctx.SaveChanges();
+            }
+            Usuario u = UsuarioDAO.BuscarUsuarioPorId(idUsuario);
+            u.Pontuacao += 1;
+            ctx.Entry(u).State = System.Data.Entity.EntityState.Modified;
+            ctx.SaveChanges();
         }
     }
 }

@@ -1,20 +1,56 @@
-﻿@model IEnumerable<PluSystemVolunteer.Models.ListaPresencaEvento>
+﻿@model List<PluSystemVolunteer.Models.ListaPresencaEvento>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+
     <table class="table">
         <tr>
-            <th></th>
+        <th>
+            Descrição Evento
+        </th>
+        <th>
+            Nome Usuário
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Ação
+        </th>
+        <th></th>
         </tr>
     
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ListaPresencaId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ListaPresencaId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ListaPresencaId })
+                @Html.DisplayFor(modelItem => item.Evento.Descricao)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Nome)
+            </td>
+
+            @if (item.Validada)
+            {
+                <td>
+                    Presença Validada
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Cancelar", "CancelarPresenca", "ListaPresenca", new { idEvento = item.Evento.EventoId, idUsuario = item.Usuario.UsuarioId }, new { @class = "btn btn-danger" })
+                </td>
+            }
+            else
+            {
+                <td>
+                    Presença Pendente
+                </td>
+               
+                <td>
+                    @Html.ActionLink("Validar", "ValidarPresenca", "ListaPresenca", new { idEvento = item.Evento.EventoId, idUsuario = item.Usuario.UsuarioId }, new { @class = "btn btn-danger" })
+                </td>
+            }
+
+
+
+
         </tr>
     }
     
