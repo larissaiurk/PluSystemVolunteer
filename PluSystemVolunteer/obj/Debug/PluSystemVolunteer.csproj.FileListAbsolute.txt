@@ -845,7 +845,7 @@ C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\
 C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.CopyComplete
 C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.dll
 C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.pdb
-C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.initial.resources
+C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.teste.resources
 C:\Users\Aluno\Desktop\PluSystemVolunteer\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.cache
 C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\bin\Newtonsoft.Json.dll
 C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\bin\System.Net.Http.Formatting.dll
