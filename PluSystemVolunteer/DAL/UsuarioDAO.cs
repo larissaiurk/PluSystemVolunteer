@@ -51,6 +51,12 @@ namespace PluSystemVolunteer.DAL
         {
             return ctx.Usuarios.ToList();
         }
+
+        public static List<Usuario> RetornarUsuariosPorPontuacao()
+        {
+            return ctx.Usuarios.OrderBy(x => x.Pontuacao).ToList() ;
+        }
+       
         public static Usuario BuscarUsuarioPorId(int? id)
         {
             return ctx.Usuarios.Find(id);
