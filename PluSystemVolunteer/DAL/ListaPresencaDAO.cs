@@ -98,6 +98,17 @@ namespace PluSystemVolunteer.DAL
             u.Pontuacao += 1;
             ctx.Entry(u).State = System.Data.Entity.EntityState.Modified;
             ctx.SaveChanges();
+
+            Financeiro f = new Financeiro();
+            f.Evento = i.Evento;
+            f.Usuario = u;
+            f.nomeUsuario = u.Nome;
+            f.Valor = i.Evento.Preco;
+            f.Descricao = "Pagamento evento";
+            f.Credito = true;
+            ctx.Financeiros.Add(f);
+            ctx.SaveChanges();
+
         }
     }
 }

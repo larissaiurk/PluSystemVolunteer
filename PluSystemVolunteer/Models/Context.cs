@@ -14,5 +14,6 @@ namespace PluSystemVolunteer.Models
         public DbSet<CategoriaEvento> CategoriasEvento { get; set; }
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<ListaPresencaEvento> Listas { get; set; }
+        public DbSet<Financeiro> Financeiros { get; set; }
     }
 }

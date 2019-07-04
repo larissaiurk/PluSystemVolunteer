@@ -157,6 +157,11 @@
     <Content Include="Views\Evento\Alterar.cshtml" />
     <Content Include="Views\Evento\Cadastrar.cshtml" />
     <Content Include="Views\ListaPresenca\Index.cshtml" />
+    <Content Include="Views\Financeiro\Create.cshtml" />
+    <Content Include="Views\Financeiro\Delete.cshtml" />
+    <Content Include="Views\Financeiro\Details.cshtml" />
+    <Content Include="Views\Financeiro\Edit.cshtml" />
+    <Content Include="Views\Financeiro\Index.cshtml" />
     <None Include="Views\Usuario\Login.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -166,6 +171,7 @@
     <Compile Include="Controllers\CategoriaEventoController.cs" />
     <Compile Include="Controllers\EventoApiController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\FinanceiroController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListaPresencaController.cs" />
@@ -180,8 +186,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907042202596_initial.cs" />
+    <Compile Include="Migrations\201907042202596_initial.Designer.cs">
+      <DependentUpon>201907042202596_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907042211471_financeiro.cs" />
+    <Compile Include="Migrations\201907042211471_financeiro.Designer.cs">
+      <DependentUpon>201907042211471_financeiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907042240484_financeiroCorrecao.cs" />
+    <Compile Include="Migrations\201907042240484_financeiroCorrecao.Designer.cs">
+      <DependentUpon>201907042240484_financeiroCorrecao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaEvento.cs" />
+    <Compile Include="Models\Financeiro.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Grupo.cs" />
@@ -214,6 +233,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907042202596_initial.resx">
+      <DependentUpon>201907042202596_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907042211471_financeiro.resx">
+      <DependentUpon>201907042211471_financeiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907042240484_financeiroCorrecao.resx">
+      <DependentUpon>201907042240484_financeiroCorrecao.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

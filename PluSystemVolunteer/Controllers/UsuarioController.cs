@@ -68,21 +68,21 @@ namespace PluSystemVolunteer.Controllers
 
 
                 Usuario usuario = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
-                if (usuario.Status == true | usuario.Administrador == true)
+                if (usuario != null) 
                 {
-                    if (usuario != null)
-                    {
-
+                    if (usuario.Status == true | usuario.Administrador == true)
+                {
 
                         //Cria uma sessão com o usuario e o status de administrador
                         Sessao.Login(usuario.UsuarioId.ToString(), usuario.Administrador);
                         return RedirectToAction("Index", "Home");
                     }
-                    TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
-                    return RedirectToAction("Login", "Usuario");
-                }
                 TempData["Error"] = "O administrador precisa validar seu cadastro ainda, aguarde alguns dias e tente novamente!!";
                 return RedirectToAction("Login", "Usuario");
+
+                }
+            TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+            return RedirectToAction("Login", "Usuario");
 
 
         }
@@ -174,7 +174,7 @@ namespace PluSystemVolunteer.Controllers
 
 
                 //ranking usuarios
-                ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
+                ViewBag.Usuarios = UsuarioDAO.RetornarUsuariosPorPontuacao();
 
                 //form
                 ViewBag.Usuario = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());

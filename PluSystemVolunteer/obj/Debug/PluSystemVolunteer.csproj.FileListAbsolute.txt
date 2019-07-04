@@ -643,9 +643,6 @@ D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.Ra
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.resources.dll
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.initial.resources
-D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
-D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.lista.resources
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csprojAssemblyReference.cache
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.CoreCompileInputs.cache
 C:\Users\barbo\Desktop\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.dll
@@ -857,3 +854,7 @@ C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSyst
 C:\Users\Aluno\Downloads\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
 C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.alteracao.resources
 C:\Users\barbo\Documents\GitHub\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.cache
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.initial.resources
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.csproj.GenerateResource.Cache
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.financeiro.resources
+D:\Universidade\OO\PluSystemVolunteer\PluSystemVolunteer\obj\Debug\PluSystemVolunteer.Migrations.financeiroCorrecao.resources

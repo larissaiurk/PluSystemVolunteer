@@ -1,0 +1,77 @@
+﻿@model IEnumerable<PluSystemVolunteer.Models.Financeiro>
+
+    <p>
+        @Html.ActionLink("Criar novo registro", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+               Valor
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th>
+                Transação
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+        @{
+            double subtotal = 0;
+
+        }
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanceiroId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+
+            @if (item.Credito)
+            {
+                <td>
+                    +
+                </td>
+            }
+            else
+            {
+                <td>
+                    -
+                </td>
+            }
+            <td>
+                @{
+                    if (item.Credito)
+                    {
+                        subtotal += item.Valor;
+                    }else
+                    {
+                        subtotal -= item.Valor;
+                    }
+
+                }
+                
+            </td>
+
+            <td>
+                @Html.ActionLink("Excluir Registro", "Delete", new { id=item.FinanceiroId })
+            </td>
+        </tr>
+        
+        
+    }
+    
+    </table>
+    <caption>Total financeiro: </caption>
+    @subtotal.ToString("C2")
+

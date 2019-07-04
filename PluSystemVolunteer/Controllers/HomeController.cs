@@ -18,7 +18,7 @@ namespace PluSystemVolunteer.Controllers
                 //eventos
                      ViewBag.Eventos = EventoDAO.RetornarEventos();
                 //ranking usuarios
-                    ViewBag.Usuarios = UsuarioDAO.RetornarUsuarios();
+                    ViewBag.Usuarios = UsuarioDAO.RetornarUsuariosPorPontuacao();
 
                     return View();
 
