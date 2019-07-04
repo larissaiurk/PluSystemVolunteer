@@ -1,13 +1,13 @@
 ﻿
 @{
     List<PluSystemVolunteer.Models.Usuario> usuarios = ViewBag.Usuarios;
-    List<PluSystemVolunteer.Models.Evento> eventos = ViewBag.Eventos;
+    List<PluSystemVolunteer.Models.ListaPresencaEvento> eventos = ViewBag.Eventos;
 
 
 }
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
 
         @using PluSystemVolunteer.Models;
 
@@ -59,26 +59,26 @@
             </fieldset>
         }
     </div>
-    <div class="offset-2 col-md-6">
+    <div class="col-md-6">
         <h2>Eventos Inscritos</h2>
         @{ if (eventos != null)
             {
 
 
-                foreach (PluSystemVolunteer.Models.Evento evento in eventos)
+                foreach (PluSystemVolunteer.Models.ListaPresencaEvento evento in eventos)
                 {
                         <div class="event_div">
                             <div class="text-center">
-                                <h1>@evento.Descricao na data: @evento.Data</h1>
-                                <p>Local do Evento:@evento.Logradouro</p>
-                                <p>@evento.Bairro</p>
-                                <p>@evento.Complemento</p>
-                                <p>CEP:@evento.Cep</p>
-                                <p>Preço:@evento.Preco</p>
+                                <h1>@evento.Evento.Descricao na data: @evento.Evento.Data</h1>
+                                <p>Local do Evento:@evento.Evento.Logradouro</p>
+                                <p>@evento.Evento.Bairro</p>
+                                <p>@evento.Evento.Complemento</p>
+                                <p>CEP:@evento.Evento.Cep</p>
+                                <p>Preço:@evento.Evento.Preco</p>
                                 @*<input style="margin-bottom:50px" value="Inscrever-se" type="submit" class="btn btn-success text-center">*@
 
                                 <iframe width="200" height="200" frameborder="0" style="border:1px; margin-left:70%"
-                                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>
+                                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjbkAwBCeh_B2K7kqc0n_ovPm3g8raobU&q=@evento.Evento.Logradouro+@evento.Evento.Bairro+@evento.Evento.Cep+BR" allowfullscreen></iframe>
 
                             </div>
 

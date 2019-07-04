@@ -9,7 +9,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using PluSystemVolunteer.utils;
-
+using System.Configuration;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json.Linq;
+using System.Web.Services;
 
 namespace PluSystemVolunteer.Controllers
 {
@@ -48,29 +52,35 @@ namespace PluSystemVolunteer.Controllers
         {
             return View();
         }
-        [HttpPost]
+     
+        public static bool captcha = false;
 
+        [HttpPost]
         public ActionResult Login(string txtEmail, string txtSenha)
         {
+
+        
             Usuario u = new Usuario
-            {
-                Login = txtEmail,
-                Senha = ComputeSha256Hash(txtSenha)
-            };
+                {
+                    Login = txtEmail,
+                    Senha = ComputeSha256Hash(txtSenha)
+                };
 
-      
-            Usuario usuario = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
-            if(usuario != null)
-            {
-              
 
-                //Cria uma sessão com o usuario e o status de administrador
-                Sessao.Login(usuario.UsuarioId.ToString(), usuario.Administrador);
-                return RedirectToAction("Index", "Home");
-            }
-            TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
-            return RedirectToAction("Login", "Usuario");
+                Usuario usuario = UsuarioDAO.BuscarUsuarioPorLoginSenha(u);
+                if (usuario != null)
+                {
 
+
+                    //Cria uma sessão com o usuario e o status de administrador
+                    Sessao.Login(usuario.UsuarioId.ToString(), usuario.Administrador);
+                    return RedirectToAction("Index", "Home");
+                }
+                TempData["Error"] = "O usuario ou senha estão incorretos, por favor, tente novamente";
+                return RedirectToAction("Login", "Usuario");
+            
+          
+          
         }
 
         public ActionResult Logout()
@@ -138,7 +148,7 @@ namespace PluSystemVolunteer.Controllers
                 //eventos
 
 
-                //ViewBag.Eventos = ListaPresencaDAO.RetornarInscricoesporIdUsuario(Sessao.RetornarUsuario());
+                ViewBag.Eventos = ListaPresencaDAO.RetornarInscricoesporIdUsuario(Sessao.RetornarUsuario());
 
 
                 //ranking usuarios
@@ -191,6 +201,19 @@ namespace PluSystemVolunteer.Controllers
                 return RedirectToAction("Login", "Usuario");
             }
         }
+        protected static string ReCaptcha_Key = "6Lc7w6kUAAAAAEqeooe_rp5WDpPay0JEM1i28S7S";
+        protected static string ReCaptcha_Secret = "6Lc7w6kUAAAAAH9IulqDgACHDl-A0kJOWx04LlJS";
+
+        [WebMethod]
+        public static string VerifyCaptcha(string response)
+        {
+
+            string url = "https://www.google.com/recaptcha/api/siteverify?secret=" + ReCaptcha_Secret + "&response=" + response;
+            
+            return (new WebClient()).DownloadString(url);
+        }
+
+        
 
     }
 }

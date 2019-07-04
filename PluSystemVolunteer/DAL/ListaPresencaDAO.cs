@@ -48,19 +48,7 @@ namespace PluSystemVolunteer.DAL
 
         public static List<ListaPresencaEvento> RetornarInscricoesporIdUsuario(int idUsuario)
         {
-
-            try
-            {
-                return ctx.Listas.Where(x => x.Usuario.Equals(idUsuario)).ToList();
-            }
-            catch (NullReferenceException)
-            {
-                return null;
-            }
-            
-
-
-
+            return ctx.Listas.Where(x => x.Usuario.UsuarioId.Equals(idUsuario)).ToList();
 
         }
     }

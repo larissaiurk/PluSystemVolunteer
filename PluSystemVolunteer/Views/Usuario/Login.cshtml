@@ -6,30 +6,45 @@
 
 
 @{ if (TempData["error"] != null)
-    {<div class="alert alert-danger text-center" role="alert">@TempData["error"]</div>} 
-    }
+    {<div class="alert alert-danger text-center" role="alert">@TempData["error"]</div>}
+}
 
 <div class="Absolute-Center is-Responsive">
     <div id="logo-container"></div>
-    
+
     <div class="col-md-10">
-             <form action="/Usuario/Login" method="post" id="loginForm">
-                <div class="form-group input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="form-control" type="text" name='txtEmail' placeholder="username" />
-                </div>
-                <div class="form-group input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input class="form-control" type="password" name='txtSenha' placeholder="password" />
-                </div>
+        <form action="/Usuario/Login" name="loginForm" method="post" id="loginForm" onsubmit="return submitUserForm();">
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" type="text" name='txtEmail' placeholder="username" />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control" type="password" name='txtSenha' placeholder="password" />
+            </div>
 
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary bnt-lg">Login</button>
-                </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary bnt-lg">Login</button>
+            </div>
 
-                 <div class="g-recaptcha" data-sitekey="6Lc7w6kUAAAAAEqeooe_rp5WDpPay0JEM1i28S7S"></div>    
+            <div class="g-recaptcha" data-sitekey="6Lc7w6kUAAAAAEqeooe_rp5WDpPay0JEM1i28S7S" data-callback="verifyCaptcha"></div>
+            <div id="g-recaptcha-error"></div>
 
-            </form>
-  
+        </form>
+
     </div>
-</div>    
+</div>
+<script>
+    function submitUserForm() {
+        var response = grecaptcha.getResponse();
+        if (response.length == 0) {
+            document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:white;">Por favor realize o recaptcha.</span>';
+            return false;
+        }
+        return true;
+    }
+
+    function verifyCaptcha() {
+        document.getElementById('g-recaptcha-error').innerHTML = '';
+    }
+</script>
